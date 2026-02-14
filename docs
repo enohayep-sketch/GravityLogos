@@ -1,1 +1,60 @@
-docs test
+Environment Identification
+Use these variables or functions to check if your script is running on Eazyy Sploit.
+
+Variables
+eazysploit (bool): true
+easysploit (bool): true (shorthand)
+eazyy (bool): true (shorthand)
+Functions
+identifyexecutor()
+Returns: string (Name), string (Version)
+Example:
+
+lua
+local name, version = identifyexecutor()
+print("Running " .. name .. " v" .. version)
+getexecutorname()
+Returns: string ("Eazyy Sploit")
+
+getexecutorversion()
+Returns: string ("2.0")
+
+isluraw()
+Returns: bool (true) - Used for compatibility with many open-source scripts.
+
+Clipboard Utilities
+Interact with the system's clipboard.
+
+setclipboard(text: string)
+Copies the provided text to the user's PC clipboard. Example: setclipboard("https://discord.gg/eazyy")
+
+toclipboard(text: string)
+Alias for setclipboard.
+
+Sandboxed Filesystem
+All file operations are strictly sandboxed within the Eazyy\Workspace folder for security.
+
+makefolder(path: string)
+Creates a new directory. Example: makefolder("MyData")
+
+listfiles(folder: string)
+Returns: table (List of filenames)
+Lists all files and subfolders in the specified directory. Example: local files = listfiles("MyData")
+
+delfile(path: string)
+Deletes a specific file. Example: delfile("temp.txt")
+
+delfolder(path: string)
+Deletes a folder and all its contents. Example: delfolder("OldData")
+
+Editor Shorthands (In-Editor Only)
+Type these directly into the Eazyy Sploit script editor and press Execute.
+
+Shorthand	Action
+inf-yield	Loads the Infinite Yield admin script.
+dex
+Loads the remote Dark Dex game explorer.
+Developer Tools
+Dex Explorer: A built-in high-performance object explorer (O(1) lookups).
+Remote Spy: Logs all RemoteEvent/RemoteFunction calls with arguments and timing.
+Nil Instance Explorer: Allows viewing objects not parented to game.
